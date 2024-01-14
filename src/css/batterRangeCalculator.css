@@ -1,0 +1,257 @@
+.counter input[type=text] {
+  position: relative;
+  height: 81px;
+  width: 233px;
+  display: flex;
+  font-size: 34px;
+  border: 1px solid #B9BED1;
+  background-color: #F0F2F7;
+  padding: 0 22px;
+  font-family: montesrratRegular;
+}
+.counter input[type=text]:focus {
+  outline: none;
+}
+.counter input[type=text]::-webkit-inner-spin-button,
+.counter input[type=text]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.counter,
+.counter * {
+  box-sizing: border-box;
+}
+
+.counter {
+  position: relative;
+}
+.counter button {
+  outline: none;
+  background-color: transparent;
+  padding: 12px;
+  cursor: pointer;
+  height: 40px;
+  position: absolute;
+  z-index: 1;
+}
+
+.staticText {
+  position: absolute;
+  top: 32px;
+  right: 90px;
+  font-size: 20px;
+  font-family: montesrratRegular;
+}
+
+.temperatureCounter input[type=text] {
+  padding-left: 50px;
+}
+.temperatureCounter .staticText {
+  top: 15px;
+  left: 90px;
+}
+
+.incrementButton {
+  top: 0;
+  right: 10px;
+  border: none;
+  border-bottom: 1px solid #B9BED1;
+}
+
+.decrementButton {
+  bottom: 0;
+  right: 10px;
+  border: none;
+}
+
+.fanButton {
+  outline: none;
+  background-color: #F0F2F7;
+  padding: 0;
+  cursor: pointer;
+  width: 123px;
+  height: 123px;
+  border: 1px solid #E3E8F0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.batterRangeCalculator .fanButton .title {
+  font-family: montesrratLight;
+  font-size: 10px;
+  color: #707070;
+  padding-top: 20px;
+}
+.batterRangeCalculator .fanButton .title:focus, .batterRangeCalculator .fanButton .title:active {
+  color: white;
+}
+
+.innerCircle {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+.innerCircle:focus, .innerCircle:active {
+  background-color: #008DFF;
+  color: white;
+}
+.innerCircle .hide {
+  display: none;
+}
+
+.batterRangeCalculator .fanButtonFormSection {
+  height: 170px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+.wheelButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  cursor: pointer;
+  height: 81px;
+  width: 233px;
+  padding: 12px;
+  outline: none;
+  border: 1px solid #B9BED1;
+  background-color: #F0F2F7;
+  font-size: 20px;
+  font-family: montesrratRegular;
+}
+.wheelButton > * {
+  pointer-events: none;
+}
+.wheelButton:focus, .wheelButton:active {
+  border: 2px solid #008DFF;
+}
+
+.wheelButtons {
+  display: flex;
+  gap: 42px;
+}
+.wheelButtons .selected {
+  border: 2px solid #008DFF;
+}
+
+.batterRangeCalculator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.batterRangeCalculator .title {
+  font-family: montesrratRegular;
+  font-size: 38px;
+}
+.batterRangeCalculator .innerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.carImageContainer {
+  position: relative;
+}
+.carImageContainer .hide {
+  display: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.carWheelImageFront {
+  position: absolute;
+  bottom: 60px;
+  left: 345px;
+  animation-name: rotate;
+  animation-duration: 1ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.carWheelImageRear {
+  position: absolute;
+  bottom: 60px;
+  right: 370px;
+  animation-name: rotate;
+  animation-duration: 1ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.distanceMeterList {
+  width: 35%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.distancePerModel {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.kiloMeters {
+  position: relative;
+  color: #008DFF;
+}
+
+.distance {
+  font-size: 46px;
+  font-family: montesrratRegular;
+}
+
+.unit {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  font-size: 20px;
+  font-family: montesrratLight;
+}
+
+.calculatorInnerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 42px;
+}
+
+.divider {
+  height: 128px;
+  border-left: 1px solid #B9BED1;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 23px;
+}
+.formSection .label {
+  font-family: montesrratLight;
+  font-size: 20px;
+  color: #707070;
+}
+.formSection .title {
+  margin: 0;
+}/*# sourceMappingURL=batterRangeCalculator.css.map */

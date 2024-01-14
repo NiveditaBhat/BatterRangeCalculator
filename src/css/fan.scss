@@ -1,0 +1,53 @@
+.fanButton{
+    outline:none;
+    background-color: #F0F2F7;
+    padding:0;
+    cursor: pointer;
+    width: 123px;
+    height: 123px;
+    border:1px solid #E3E8F0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.batterRangeCalculator .fanButton .title{
+    font-family: montesrratLight;
+    font-size: 10px;
+    color:#707070;
+    padding-top: 20px;
+
+    &:focus, &:active{
+        color:white;  
+    }
+}
+
+.innerCircle{
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:9px;
+
+    &:focus, &:active {
+        background-color: #008DFF;
+        color:white;  
+    }
+
+    .hide{
+        display: none;
+    }
+}
+
+.batterRangeCalculator .fanButtonFormSection{
+    height: 170px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+}

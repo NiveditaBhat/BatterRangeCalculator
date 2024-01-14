@@ -1,0 +1,34 @@
+$border-selected:2px solid #008DFF;
+
+.wheelButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:35px;
+    cursor: pointer;
+    height: 81px;
+    width: 233px;
+    padding:12px;
+    outline:none;
+    border: 1px solid #B9BED1;
+    background-color: #F0F2F7;
+    font-size: 20px;
+    font-family: montesrratRegular;
+
+    > * {
+        pointer-events: none;
+      }
+
+    &:focus, &:active{
+        border:$border-selected;
+    }
+}
+
+.wheelButtons{
+    display: flex;
+    gap:42px;
+
+    .selected{
+        border:$border-selected;
+    }
+}

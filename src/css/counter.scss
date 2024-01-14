@@ -1,0 +1,79 @@
+.counter{
+    input[type=text] {
+        position: relative; 
+        height: 81px;
+        width: 233px;
+        display: flex;
+        font-size: 34px;
+        border: 1px solid #B9BED1;
+        background-color: #F0F2F7;
+        padding: 0 22px;
+        font-family: montesrratRegular;
+    
+        &:focus{
+            outline: none;
+        }
+    }
+    
+    input[type=text]::-webkit-inner-spin-button,
+    input[type=text]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+}
+
+
+
+.counter,
+.counter * {
+    box-sizing: border-box;
+}
+
+.counter {
+    position: relative;
+
+    button{
+        outline:none;
+        background-color: transparent;
+        padding:12px;
+        cursor: pointer;
+        height: 40px;
+        position: absolute;
+        z-index: 1;
+        
+    }
+
+}
+
+.staticText{
+    position: absolute;
+    top:32px;
+    right:90px;
+    font-size: 20px;
+    font-family: montesrratRegular;
+}
+
+.temperatureCounter{
+
+    input[type=text]{
+       padding-left:50px;
+    }
+
+    .staticText{
+        top:15px;
+        left:90px; 
+    }
+}
+
+  
+.incrementButton {
+    top: 0;
+    right: 10px;
+    border: none;
+    border-bottom: 1px solid #B9BED1;
+}
+
+.decrementButton {
+    bottom: 0;
+    right: 10px;
+    border: none;
+}

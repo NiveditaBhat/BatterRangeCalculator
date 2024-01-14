@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tesla battery range calculator</title>
+</head>
+
+<body>
+  <header class="logoWrapper">
+    <img class="logo" src="src/images/logo.png" alt="tesla logo" width="100" height="13" />
+  </header>
+  <div class="navContainer">
+    <img class="heroImage" src="src/images/hero-image@2x.png" alt="tesla car image" width="1400" height="800" />
+    <nav>
+      <a class="navItem selected">MODEL S</a>
+      <a class="navItem">MODEL X</a>
+      <a class="navItem">MODEL 3</a>
+      <a class="navItem">ROADSTER</a>
+      <a class="navItem">ENERGY</a>
+    </nav>
+  </div>
+  <section id="app" class="main">
+    <section class="introduction">
+      <h1 class="title">Far far away, behind the word mountains…</h1>
+      <small class="description">A small river named Duden flows by their place and supplies it with the necessary
+        regelialia. It is a
+        paradisematic country, in which roasted parts of sentences fly into your mouth.</small>
+      <a class="chevronDownButton" href="#batterRangeCalculator">
+        <img src="src/images/icon-chevron-down.svg" alt="chevron down icon" />
+      </a>
+    </section>
+    <section class="batterRangeCalculator">
+      <h2 class="title">Range per Charge</h2>
+      <div class="carImageContainer">
+        <img src="src/images/car-base@2x.png" alt="silver tesla car" width="1400" height="388" />
+        <img class="carWheelImageFront hide" src="src/images/car-wheel@2x.png" alt="tesla car big front wheel"
+          width="133" height="133" data-size="21" />
+        <img class="carWheelImageFront" src="src/images/car-wheel.png" alt="tesla car small front wheel" width="133"
+          height="133" data-size="19" />
+        <img class="carWheelImageRear hide" src="src/images/car-wheel@2x.png" alt="tesla car big rear wheel" width="133"
+          height="133" data-size="21" />
+        <img class="carWheelImageRear" src="src/images/car-wheel.png" alt="tesla car small rear wheel" width="133"
+          height="133" data-size="19" />
+      </div>
+      <div class="innerContainer" id="batterRangeCalculator">
+        <ul class="distanceMeterList">
+          <li class="distancePerModel" data-model="100D">
+            <img src="src/images/100d@2x.png" alt="tesla model 100D" width="146" height="23" />
+            <div class="kiloMeters">
+              <span class="distance" data-kms="-">-</span>
+              <span class="unit">KM</span>
+            </div>
+          </li>
+          <li class="distancePerModel" data-model="P100D">
+            <img src="src/images/p100d@2x.png" alt="tesla model P100D" width="146" height="23" />
+            <div class="kiloMeters">
+              <span class="distance" data-kms="-">-</span>
+              <span class="unit">KM</span>
+            </div>
+          </li>
+        </ul>
+        <section class="calculatorInnerContainer">
+          <!-- speed counter -->
+          <div class="formSection">
+            <label class="label" for="speedCounter">Speed</label>
+            <div class="counter speedCounter" id="speedCounter">
+              <button type="button" class="decrementButton">
+                <object data="src/images/icon-thin-chevron-down.svg" type="image/svg+xml">
+                  <img src="src/images/icon-thin-chevron-down.svg" width="25" height="8">
+                </object>
+              </button>
+              <input type="text" value="100" readonly>
+              <span class="staticText">KMH</span>
+              <button type="button" class="incrementButton">
+                <object data="src/images/icon-thin-chevron-up.svg" type="image/svg+xml">
+                  <img src="src/images/icon-thin-chevron-up.svg" width="25" height="8">
+                </object>
+              </button>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <!-- temperature counter -->
+          <div class="formSection">
+            <label class="label" for="temperatureCounter">Outside temperature</label>
+            <div class="counter temperatureCounter" id="temperatureCounter">
+              <button type="button" class="decrementButton">
+                <object data="src/images/icon-thin-chevron-down.svg" type="image/svg+xml">
+                  <img src="src/images/icon-thin-chevron-down.svg" width="25" height="8">
+                </object>
+              </button>
+              <input type="text" value="40" readonly>
+              <span class="staticText">o</span>
+              <button type="button" class="incrementButton">
+                <object data="src/images/icon-thin-chevron-up.svg" type="image/svg+xml">
+                  <img src="src/images/icon-thin-chevron-up.svg" width="25" height="8">
+                </object>
+              </button>
+            </div>
+          </div>
+          <!-- fan button -->
+          <div class="formSection fanButtonFormSection">
+            <button type="button" class="fanButton" aria-label="ac icon">
+              <span class="innerCircle">
+                <span class="title">AC OFF</span>
+                <img class="airConditioner" src="src/images/icon-fan-gray.svg" alt="gray fan" width="43" height="43">
+                <img class="heater hide" src="src/images/icon-wave-gray.svg" alt="gray heater" width="43" height="43">
+              </span>
+            </button>
+          </div>
+          <div class="divider"></div>
+          <!-- wheel buttons -->
+          <div class="formSection">
+            <h6 class="label title">Wheels</h6>
+            <div class="wheelButtons">
+              <button type="button" class="wheelButton selected" data-size="19" aria-label="wheel size button">
+                <img src="src/images/icon-wheel.svg" width="53" height="53">
+                <span class="name">19""</span>
+              </button>
+              <button type="button" class="wheelButton" data-size="21" aria-label="wheel size button">
+                <img src="src/images/icon-wheel.svg" width="53" height="53">
+                <span class="name">21""</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <small>The actual amount of range that you experience will vary based on your particular use conditions. Your
+          vehicle range is also dependent on other conditions, such as vehicle configuration, battery age and condition,
+          driving style and operating, environmental and climate conditions. See how some of these particular use
+          conditions
+          may affect your range in our simulation model.</small>
+      </div>
+    </section>
+
+  </section>
+  <footer>
+    <div class="footerItem">
+      <span class="title">CONTACTUS</span>
+      <div class="info">
+        <span>+44 345 678 903</span>
+        <span>adobexd@mail.com</span>
+        <span>Find a Store</span>
+      </div>
+    </div>
+    <div class="footerItem">
+      <span class="title">CUSTOMER SERVICE</span>
+      <div class="info">
+        <span>Contact Us</span>
+        <span>Shipping</span>
+        <span>Returns</span>
+        <span>FAQ</span>
+      </div>
+    </div>
+    <div class="footerItem">
+      <span class="title">INFORMATION</span>
+      <div class="info">
+        <span>About this example</span>
+        <span>Work With US</span>
+        <span>Privacy Policy</span>
+        <span>Terms & Conditions</span>
+        <span>Press Enquiries</span>
+      </div>
+    </div>
+    <div class="footerItem">
+      <span class="title">CUSTOMER SERVICE</span>
+      <div class="info">
+        <span>Contact Us</span>
+        <span>Shipping</span>
+        <span>Returns</span>
+        <span>FAQ</span>
+      </div>
+    </div>
+    <div class="footerItem">
+      <span class="title subscribeTitle">Subscribe to us via Email</span>
+      <div class="info subscribeInfo">
+        <span class="subscribeText">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</span>
+        <div class="subscribeContainer">
+          <input type="text" placeholder="Email Address" />
+          <button type="button" class="subscribeButton">SUBSCRIBE</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
