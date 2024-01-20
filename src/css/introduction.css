@@ -9,8 +9,13 @@
 }
 .introduction .title {
   font-family: montesrratLight;
-  font-size: 64px;
+  font-size: 34px;
   margin: 0;
+}
+@media (min-width: 768px) {
+  .introduction .title {
+    font-size: 64px;
+  }
 }
 .introduction .description {
   font-family: Arial, Helvetica, sans-serif;

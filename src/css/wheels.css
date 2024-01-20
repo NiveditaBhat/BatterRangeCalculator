@@ -22,8 +22,24 @@
 
 .wheelButtons {
   display: flex;
-  gap: 42px;
+  flex-direction: column;
+  gap: 20px;
 }
 .wheelButtons .selected {
   border: 2px solid #008DFF;
+}
+@media (min-width: 768px) {
+  .wheelButtons {
+    flex-direction: row;
+    gap: 42px;
+  }
+}
+
+.formSection.wheels {
+  grid-column: span 2;
+}
+@media (min-width: 1024px) {
+  .formSection.wheels {
+    align-items: center;
+  }
 }/*# sourceMappingURL=wheels.css.map */

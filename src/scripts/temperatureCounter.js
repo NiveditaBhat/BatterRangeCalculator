@@ -1,21 +1,21 @@
 import Counter from "./counter";
 
 class TemperatureCounter extends Counter {
-  constructor(initialCount, min, max, fan, element = null) {
-    super(initialCount, min, max, element);
-    this.fan = fan;
+  constructor(min, max, type) {
+    super(min, max, type);
+
+    this.#addEventListeners();
   }
 
-  addEventListeners() {
-    const incrementButton = this.element.querySelector(".incrementButton");
-    const decrementButton = this.element.querySelector(".decrementButton");
-
-    super.addEventListeners();
+  #addEventListeners() {
+    const counterElement = this.getElement();
+    const incrementButton = counterElement.querySelector(".incrementButton");
+    const decrementButton = counterElement.querySelector(".decrementButton");
 
     incrementButton.addEventListener("click", () => {
       document.dispatchEvent(
         new CustomEvent("temperatureChangedEvent", {
-          detail: { temperature: this.count },
+          detail: { temperature: this.getCount() },
         }),
       );
     });
@@ -23,7 +23,7 @@ class TemperatureCounter extends Counter {
     decrementButton.addEventListener("click", () => {
       document.dispatchEvent(
         new CustomEvent("temperatureChangedEvent", {
-          detail: { temperature: this.count },
+          detail: { temperature: this.getCount() },
         }),
       );
     });

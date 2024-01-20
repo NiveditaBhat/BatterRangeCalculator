@@ -1,3 +1,5 @@
+@import 'breakpoints';
+
 .fanButton{
     outline:none;
     background-color: #F0F2F7;
@@ -46,8 +48,18 @@
 }
 
 .batterRangeCalculator .fanButtonFormSection{
-    height: 170px;
     display: flex;
     align-items: flex-end;
     flex-direction: row;
+    
+
+    @include respond-to(screen-medium) {
+        grid-column: span 2;
+        justify-content: center;
+      }
+
+      @include respond-to(screen-xl) {
+        height: 170px;
+      }
 }
+

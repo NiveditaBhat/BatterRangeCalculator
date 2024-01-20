@@ -2,6 +2,8 @@
 @use './fan.scss';
 @use './wheels.scss';
 
+@import 'breakpoints';
+
 
 .batterRangeCalculator{
     display: flex;
@@ -9,12 +11,16 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    //width: 70%;
+    padding:20px;
 
 
 .title{
     font-family: montesrratRegular;
-    font-size: 38px;
+    font-size: 20px;
+
+    @include respond-to(screen-medium) {
+        font-size: 38px;
+    }
 }
 
 .innerContainer{
@@ -23,10 +29,21 @@
     align-items: center;
     gap: 64px;
 }
+
 }
 
 .carImageContainer {
     position: relative;
+    background-image: url("../images/car-base.png");
+    background-size: cover;
+    width: 700px;
+    height: 200px;
+
+    @include respond-to(screen-medium) {
+        background-image: url("../images/car-base@2x.png");
+        width: 1400px;
+        height: 388px;
+    }
 
     .hide{
         display: none;
@@ -38,24 +55,44 @@
     to{ transform: rotate(360deg); }
 }
 
+
 .carWheelImageFront{
     position: absolute;
-    bottom: 60px;
-    left: 345px;
+    width: 70px;
+    height: 70px;
+    bottom: 30px;
+    left: 178px;
     animation-name: rotate;
     animation-duration: 1ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+
+    @include respond-to(screen-medium) {
+        bottom: 60px;
+        left: 345px;
+        width: 133px;
+        height: 133px;
+    }
+ 
 }
 
 .carWheelImageRear{
     position: absolute;
-    bottom: 60px;
-    right: 370px;
+    bottom: 30px;
+    right: 168px;
+    width: 70px;
+    height: 70px;
     animation-name: rotate;
     animation-duration: 1ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+
+    @include respond-to(screen-medium) {
+        bottom: 60px;
+        right: 370px;
+        width: 133px;
+        height: 133px;
+    }
 }
 
 .distanceMeterList{
@@ -65,12 +102,29 @@
     padding: 0;
     display: flex;
    justify-content: space-between;
+
+//    @include respond-to(screen-medium) {
+//         width: 35%;
+//     }
+
 }
+
 
 .distancePerModel{
     display: flex;
     flex-direction: column;
     gap:22px;
+
+}
+
+.modelName{
+    width: 80px;
+    height: auto;
+   
+    @include respond-to(screen-medium) {
+        width:146px;
+        height:23px;
+    }
 }
 
 .kiloMeters{
@@ -79,30 +133,61 @@
 }
 
 .distance{
-    font-size:46px;
+    font-size:20px;
     font-family: montesrratRegular;
+
+    @include respond-to(screen-medium) {
+        font-size:46px;
+    }
 }
 
 .unit{
     position:absolute;
     top: 0;
-    right: -10px;
-    font-size:20px;
-    font-family: montesrratLight;
+    right: 0;
+    font-family: montesrratLight;   
+    font-size: 10px;
+
+    @include respond-to(screen-medium) {
+        right: -10px;
+        font-size:20px;
+    }
 }
 
 
 .calculatorInnerContainer{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    gap:42px;
+    gap:30px;
+
+    @include respond-to(screen-medium) {
+        display:grid;
+        grid-template-columns: 50% 50%;
+        gap:40px;
+    }
+
+    @include respond-to(screen-xl) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap:25px;
+    }
+
+    @include respond-to(screen-xxl) {
+        gap:42px;
+    }
 
 }
 
 .divider{
     height: 128px;
     border-left: 1px solid #B9BED1;
+    display: none;
+
+      @include respond-to(screen-xl) {
+            display: block;
+       }
 }
 
 .formSection{
@@ -110,6 +195,14 @@
     flex-direction: column;
     align-items: flex-start;
     gap:23px;
+
+    @include respond-to(screen-medium) {
+        align-items: center;
+    }
+
+   @include respond-to(screen-large) {
+    align-items: flex-start;
+    }
 
     .label{
         font-family:montesrratLight ;

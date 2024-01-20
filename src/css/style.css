@@ -9,8 +9,13 @@
 }
 .introduction .title {
   font-family: montesrratLight;
-  font-size: 64px;
+  font-size: 34px;
   margin: 0;
+}
+@media (min-width: 768px) {
+  .introduction .title {
+    font-size: 64px;
+  }
 }
 .introduction .description {
   font-family: Arial, Helvetica, sans-serif;
@@ -150,10 +155,20 @@
 }
 
 .batterRangeCalculator .fanButtonFormSection {
-  height: 170px;
   display: flex;
   align-items: flex-end;
   flex-direction: row;
+}
+@media (min-width: 768px) {
+  .batterRangeCalculator .fanButtonFormSection {
+    grid-column: span 2;
+    justify-content: center;
+  }
+}
+@media (min-width: 1200px) {
+  .batterRangeCalculator .fanButtonFormSection {
+    height: 170px;
+  }
 }
 
 .wheelButton {
@@ -180,10 +195,26 @@
 
 .wheelButtons {
   display: flex;
-  gap: 42px;
+  flex-direction: column;
+  gap: 20px;
 }
 .wheelButtons .selected {
   border: 2px solid #008DFF;
+}
+@media (min-width: 768px) {
+  .wheelButtons {
+    flex-direction: row;
+    gap: 42px;
+  }
+}
+
+.formSection.wheels {
+  grid-column: span 2;
+}
+@media (min-width: 1024px) {
+  .formSection.wheels {
+    align-items: center;
+  }
 }
 
 .batterRangeCalculator {
@@ -192,10 +223,16 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  padding: 20px;
 }
 .batterRangeCalculator .title {
   font-family: montesrratRegular;
-  font-size: 38px;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  .batterRangeCalculator .title {
+    font-size: 38px;
+  }
 }
 .batterRangeCalculator .innerContainer {
   display: flex;
@@ -206,6 +243,17 @@
 
 .carImageContainer {
   position: relative;
+  background-image: url("../images/car-base.png");
+  background-size: cover;
+  width: 700px;
+  height: 200px;
+}
+@media (min-width: 768px) {
+  .carImageContainer {
+    background-image: url("../images/car-base@2x.png");
+    width: 1400px;
+    height: 388px;
+  }
 }
 .carImageContainer .hide {
   display: none;
@@ -221,22 +269,42 @@
 }
 .carWheelImageFront {
   position: absolute;
-  bottom: 60px;
-  left: 345px;
+  width: 70px;
+  height: 70px;
+  bottom: 30px;
+  left: 178px;
   animation-name: rotate;
   animation-duration: 1ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+@media (min-width: 768px) {
+  .carWheelImageFront {
+    bottom: 60px;
+    left: 345px;
+    width: 133px;
+    height: 133px;
+  }
+}
 
 .carWheelImageRear {
   position: absolute;
-  bottom: 60px;
-  right: 370px;
+  bottom: 30px;
+  right: 168px;
+  width: 70px;
+  height: 70px;
   animation-name: rotate;
   animation-duration: 1ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+@media (min-width: 768px) {
+  .carWheelImageRear {
+    bottom: 60px;
+    right: 370px;
+    width: 133px;
+    height: 133px;
+  }
 }
 
 .distanceMeterList {
@@ -254,34 +322,82 @@
   gap: 22px;
 }
 
+.modelName {
+  width: 80px;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .modelName {
+    width: 146px;
+    height: 23px;
+  }
+}
+
 .kiloMeters {
   position: relative;
   color: #008DFF;
 }
 
 .distance {
-  font-size: 46px;
+  font-size: 20px;
   font-family: montesrratRegular;
+}
+@media (min-width: 768px) {
+  .distance {
+    font-size: 46px;
+  }
 }
 
 .unit {
   position: absolute;
   top: 0;
-  right: -10px;
-  font-size: 20px;
+  right: 0;
   font-family: montesrratLight;
+  font-size: 10px;
+}
+@media (min-width: 768px) {
+  .unit {
+    right: -10px;
+    font-size: 20px;
+  }
 }
 
 .calculatorInnerContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 42px;
+  gap: 30px;
+}
+@media (min-width: 768px) {
+  .calculatorInnerContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .calculatorInnerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
+  }
+}
+@media (min-width: 1400px) {
+  .calculatorInnerContainer {
+    gap: 42px;
+  }
 }
 
 .divider {
   height: 128px;
   border-left: 1px solid #B9BED1;
+  display: none;
+}
+@media (min-width: 1200px) {
+  .divider {
+    display: block;
+  }
 }
 
 .formSection {
@@ -289,6 +405,16 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 23px;
+}
+@media (min-width: 768px) {
+  .formSection {
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+  .formSection {
+    align-items: flex-start;
+  }
 }
 .formSection .label {
   font-family: montesrratLight;
@@ -311,8 +437,8 @@
   font-family: montesrratBold;
   src: url(../fonts/Montserrat-Bold.ttf);
 }
-body {
-  font-family: "Poppins", Helvertica, sans-serif;
+html, body {
+  font-family: montesrratRegular;
   background-color: white;
   padding: 0;
   margin: 0;
@@ -333,34 +459,128 @@ body {
 .logoWrapper {
   height: 65px;
   background-color: black;
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navButton {
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .navButton {
+    display: none;
+  }
+}
+.navButton:active {
+  background-color: #7FC4FD;
+}
+
+.navContainerMobile {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .navContainerMobile {
+    display: none;
+  }
+}
+.navContainerMobile nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 0px 10px #7FC4FD;
+  width: 100%;
+}
+.navContainerMobile .menuList {
+  list-style: none;
+  padding: 0;
+}
+.navContainerMobile .menuList li {
+  padding: 20px;
+}
+
+.hide {
+  display: none;
 }
 
 .navContainer {
   position: relative;
+  background-image: url("../images/hero-image.png");
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
+@media (min-width: 640px) {
+  .navContainer {
+    height: 400px;
+  }
+}
+@media (min-width: 768px) {
+  .navContainer {
+    height: 500px;
+  }
+}
+@media (min-width: 1024px) {
+  .navContainer {
+    background-image: url("../images/hero-image@2x.png");
+    height: 700px;
+  }
+}
+@media (min-width: 1200px) {
+  .navContainer {
+    height: 800px;
+  }
+}
+.navContainer .navItem {
+  padding: 14px 0;
+  cursor: pointer;
+}
+.navContainer .selected {
+  border-bottom: 1px solid white;
 }
 .navContainer nav {
   position: absolute;
   top: 0;
   width: 100%;
-  display: flex;
-  gap: 80px;
-  align-items: center;
-  justify-content: center;
-  padding: 33px;
   color: #FFFFFF;
   font-size: 14px;
   font-family: montesrratBold;
 }
-.navContainer nav .navItem {
-  padding: 14px 0;
-  cursor: pointer;
+.navContainer .menuList {
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 33px 0;
+  display: none;
+  list-style: none;
 }
-.navContainer nav .selected {
-  border-bottom: 1px solid white;
+@media (min-width: 768px) {
+  .navContainer .menuList {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .navContainer .menuList {
+    gap: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .navContainer .menuList {
+    gap: 80px;
+  }
 }
 
 .heroImage {
@@ -371,16 +591,34 @@ small {
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   color: #040C36;
+  text-align: justify;
 }
 
 footer {
-  width: 100%;
-  height: 260px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
   background-color: black;
   color: #FFFFFF;
-  padding: 60px 60px 0 60px;
-  display: flex;
-  gap: 90px;
+  padding: 20px 0;
+}
+@media (min-width: 768px) {
+  footer {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 60px;
+  }
+}
+@media (min-width: 1200px) {
+  footer {
+    padding: 60px 60px 0 60px;
+    display: flex;
+    flex-direction: row;
+    gap: 90px;
+    height: 260px;
+  }
 }
 
 .footerItem {
@@ -430,7 +668,13 @@ footer {
 }
 .footerItem .subscribeContainer {
   display: flex;
+  flex-direction: column;
   gap: 20px;
+}
+@media (min-width: 768px) {
+  .footerItem .subscribeContainer {
+    flex-direction: row;
+  }
 }
 .footerItem .subscribeText {
   color: #7FC4FD;

@@ -1,3 +1,5 @@
+@import 'breakpoints';
+
 $border-selected:2px solid #008DFF;
 
 .wheelButton{
@@ -26,9 +28,25 @@ $border-selected:2px solid #008DFF;
 
 .wheelButtons{
     display: flex;
-    gap:42px;
+    flex-direction: column;
+    gap:20px;
 
     .selected{
         border:$border-selected;
     }
+
+    @include respond-to(screen-medium) {
+        flex-direction: row;
+        gap:42px;
+    }
 }
+
+.formSection.wheels{
+    grid-column: span 2;
+
+    @include respond-to(screen-large) {
+        align-items: center;
+    }
+    }
+
+   

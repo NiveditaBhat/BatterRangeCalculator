@@ -41,8 +41,18 @@
 }
 
 .batterRangeCalculator .fanButtonFormSection {
-  height: 170px;
   display: flex;
   align-items: flex-end;
   flex-direction: row;
+}
+@media (min-width: 768px) {
+  .batterRangeCalculator .fanButtonFormSection {
+    grid-column: span 2;
+    justify-content: center;
+  }
+}
+@media (min-width: 1200px) {
+  .batterRangeCalculator .fanButtonFormSection {
+    height: 170px;
+  }
 }/*# sourceMappingURL=fan.css.map */

@@ -1,7 +1,19 @@
 import "./css/style.css";
 import "./scripts/imageImporter.js";
-import BatterRangeCalculator from "./scripts/batterRangeCalculator.js";
+import BatteryRangeCalculator from "./scripts/batteryRangeCalculator.js";
 
-const batterRangeCalculator = new BatterRangeCalculator();
+const toggleMenu = () => {
+  const navButton = document.querySelector(".navButton");
+  navButton.addEventListener("click", () => {
+    const navMenu = document.querySelector(".navContainerMobile");
+    if (navMenu.classList.contains("hide")) {
+      navMenu.classList.remove("hide");
+    } else {
+      navMenu.classList.add("hide");
+    }
+  });
+};
 
-batterRangeCalculator.setupEvents();
+toggleMenu();
+
+const batterRangeCalculator = new BatteryRangeCalculator();

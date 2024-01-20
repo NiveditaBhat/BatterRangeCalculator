@@ -9,16 +9,27 @@
 
 <body>
   <header class="logoWrapper">
-    <img class="logo" src="src/images/logo.png" alt="tesla logo" width="100" height="13" />
+    <img class="logo" src="src/images/logo.png" alt="tesla logo" width="100" height="13">
+    <img class="navButton" src="src/images/menu-icon-mobile.jpg" width="80" height="80" alt="menu icon mobile">
   </header>
+  <div class="navContainerMobile hide">
+    <nav class="menu">
+      <ul class="menuList">
+        <li><a class="navItem selected">MODEL S</a></li>
+        <li><a class="navItem">MODEL X</a></li>
+        <li><a class="navItem">ROADSTER</a></li>
+        <li><a class="navItem">ENERGY</a></li>
+      </ul>
+    </nav>
+  </div>
   <div class="navContainer">
-    <img class="heroImage" src="src/images/hero-image@2x.png" alt="tesla car image" width="1400" height="800" />
-    <nav>
-      <a class="navItem selected">MODEL S</a>
-      <a class="navItem">MODEL X</a>
-      <a class="navItem">MODEL 3</a>
-      <a class="navItem">ROADSTER</a>
-      <a class="navItem">ENERGY</a>
+    <nav class="menu">
+      <ul class="menuList">
+        <li><a class="navItem selected">MODEL S</a></li>
+        <li><a class="navItem">MODEL X</a></li>
+        <li><a class="navItem">ROADSTER</a></li>
+        <li><a class="navItem">ENERGY</a></li>
+      </ul>
     </nav>
   </div>
   <section id="app" class="main">
@@ -28,33 +39,32 @@
         regelialia. It is a
         paradisematic country, in which roasted parts of sentences fly into your mouth.</small>
       <a class="chevronDownButton" href="#batterRangeCalculator">
-        <img src="src/images/icon-chevron-down.svg" alt="chevron down icon" />
+        <img src="src/images/icon-chevron-down.svg" alt="chevron down icon">
       </a>
     </section>
     <section class="batterRangeCalculator">
       <h2 class="title">Range per Charge</h2>
       <div class="carImageContainer">
-        <img src="src/images/car-base@2x.png" alt="silver tesla car" width="1400" height="388" />
         <img class="carWheelImageFront hide" src="src/images/car-wheel@2x.png" alt="tesla car big front wheel"
-          width="133" height="133" data-size="21" />
+          width="133" height="133" data-size="21" data-type="front">
         <img class="carWheelImageFront" src="src/images/car-wheel.png" alt="tesla car small front wheel" width="133"
-          height="133" data-size="19" />
+          height="133" data-size="19" data-type="front">
         <img class="carWheelImageRear hide" src="src/images/car-wheel@2x.png" alt="tesla car big rear wheel" width="133"
-          height="133" data-size="21" />
+          height="133" data-size="21" data-type="rear">
         <img class="carWheelImageRear" src="src/images/car-wheel.png" alt="tesla car small rear wheel" width="133"
-          height="133" data-size="19" />
+          height="133" data-size="19" data-type="rear">
       </div>
       <div class="innerContainer" id="batterRangeCalculator">
         <ul class="distanceMeterList">
           <li class="distancePerModel" data-model="100D">
-            <img src="src/images/100d@2x.png" alt="tesla model 100D" width="146" height="23" />
+            <img class="modelName" src="src/images/100d@2x.png" alt="tesla model 100D" width="146" height="23">
             <div class="kiloMeters">
               <span class="distance" data-kms="-">-</span>
               <span class="unit">KM</span>
             </div>
           </li>
           <li class="distancePerModel" data-model="P100D">
-            <img src="src/images/p100d@2x.png" alt="tesla model P100D" width="146" height="23" />
+            <img class="modelName" src="src/images/p100d@2x.png" alt="tesla model P100D" width="146" height="23">
             <div class="kiloMeters">
               <span class="distance" data-kms="-">-</span>
               <span class="unit">KM</span>
@@ -65,13 +75,13 @@
           <!-- speed counter -->
           <div class="formSection">
             <label class="label" for="speedCounter">Speed</label>
-            <div class="counter speedCounter" id="speedCounter">
-              <button type="button" class="decrementButton">
+            <div class="counter" data-counter="speed">
+              <button type="button" id="speedCounter" class="decrementButton">
                 <object data="src/images/icon-thin-chevron-down.svg" type="image/svg+xml">
                   <img src="src/images/icon-thin-chevron-down.svg" width="25" height="8">
                 </object>
               </button>
-              <input type="text" value="100" readonly>
+              <input type="text" name="speedCounter" value="100" readonly>
               <span class="staticText">KMH</span>
               <button type="button" class="incrementButton">
                 <object data="src/images/icon-thin-chevron-up.svg" type="image/svg+xml">
@@ -84,13 +94,13 @@
           <!-- temperature counter -->
           <div class="formSection">
             <label class="label" for="temperatureCounter">Outside temperature</label>
-            <div class="counter temperatureCounter" id="temperatureCounter">
-              <button type="button" class="decrementButton">
+            <div class="counter temperatureCounter" data-counter="temperature">
+              <button type="button" id="temperatureCounter" class="decrementButton">
                 <object data="src/images/icon-thin-chevron-down.svg" type="image/svg+xml">
                   <img src="src/images/icon-thin-chevron-down.svg" width="25" height="8">
                 </object>
               </button>
-              <input type="text" value="40" readonly>
+              <input type="text" name="temperatureCounter" value="40" readonly>
               <span class="staticText">o</span>
               <button type="button" class="incrementButton">
                 <object data="src/images/icon-thin-chevron-up.svg" type="image/svg+xml">
@@ -111,7 +121,7 @@
           </div>
           <div class="divider"></div>
           <!-- wheel buttons -->
-          <div class="formSection">
+          <div class="formSection wheels">
             <h6 class="label title">Wheels</h6>
             <div class="wheelButtons">
               <button type="button" class="wheelButton selected" data-size="19" aria-label="wheel size button">
@@ -176,7 +186,7 @@
       <div class="info subscribeInfo">
         <span class="subscribeText">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</span>
         <div class="subscribeContainer">
-          <input type="text" placeholder="Email Address" />
+          <input type="text" name="email" placeholder="Email Address" autocomplete="false" />
           <button type="button" class="subscribeButton">SUBSCRIBE</button>
         </div>
       </div>

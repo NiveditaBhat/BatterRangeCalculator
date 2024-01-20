@@ -1,14 +1,18 @@
 class Distance {
   constructor(data, element = null) {
-    this.data = data;
-    this.element = element;
+    this.#data = data;
+    this.#element = element;
   }
+
+  #data;
+
+  #element;
 
   #kilometers;
 
   computeDistance(speed, outsideTemperature, fan, wheel) {
     this.#kilometers =
-      this.data
+      this.#data
         .find(
           (item) =>
             item.ac === fan &&
@@ -25,7 +29,12 @@ class Distance {
   }
 
   #updateDistance() {
-    const distanceElement = this.element.querySelector(".kiloMeters .distance");
+    const distanceElement = this.#element?.querySelector(
+      ".kiloMeters .distance",
+    );
+    if (!distanceElement) {
+      throw new Error("Distance element not found");
+    }
     distanceElement.textContent = this.getDistance();
     distanceElement.setAttribute("kms", this.getDistance());
   }

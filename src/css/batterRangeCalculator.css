@@ -107,10 +107,20 @@
 }
 
 .batterRangeCalculator .fanButtonFormSection {
-  height: 170px;
   display: flex;
   align-items: flex-end;
   flex-direction: row;
+}
+@media (min-width: 768px) {
+  .batterRangeCalculator .fanButtonFormSection {
+    grid-column: span 2;
+    justify-content: center;
+  }
+}
+@media (min-width: 1200px) {
+  .batterRangeCalculator .fanButtonFormSection {
+    height: 170px;
+  }
 }
 
 .wheelButton {
@@ -137,10 +147,26 @@
 
 .wheelButtons {
   display: flex;
-  gap: 42px;
+  flex-direction: column;
+  gap: 20px;
 }
 .wheelButtons .selected {
   border: 2px solid #008DFF;
+}
+@media (min-width: 768px) {
+  .wheelButtons {
+    flex-direction: row;
+    gap: 42px;
+  }
+}
+
+.formSection.wheels {
+  grid-column: span 2;
+}
+@media (min-width: 1024px) {
+  .formSection.wheels {
+    align-items: center;
+  }
 }
 
 .batterRangeCalculator {
@@ -149,10 +175,16 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  padding: 20px;
 }
 .batterRangeCalculator .title {
   font-family: montesrratRegular;
-  font-size: 38px;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  .batterRangeCalculator .title {
+    font-size: 38px;
+  }
 }
 .batterRangeCalculator .innerContainer {
   display: flex;
@@ -163,6 +195,17 @@
 
 .carImageContainer {
   position: relative;
+  background-image: url("../images/car-base.png");
+  background-size: cover;
+  width: 700px;
+  height: 200px;
+}
+@media (min-width: 768px) {
+  .carImageContainer {
+    background-image: url("../images/car-base@2x.png");
+    width: 1400px;
+    height: 388px;
+  }
 }
 .carImageContainer .hide {
   display: none;
@@ -178,22 +221,42 @@
 }
 .carWheelImageFront {
   position: absolute;
-  bottom: 60px;
-  left: 345px;
+  width: 70px;
+  height: 70px;
+  bottom: 30px;
+  left: 178px;
   animation-name: rotate;
   animation-duration: 1ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+@media (min-width: 768px) {
+  .carWheelImageFront {
+    bottom: 60px;
+    left: 345px;
+    width: 133px;
+    height: 133px;
+  }
+}
 
 .carWheelImageRear {
   position: absolute;
-  bottom: 60px;
-  right: 370px;
+  bottom: 30px;
+  right: 168px;
+  width: 70px;
+  height: 70px;
   animation-name: rotate;
   animation-duration: 1ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+@media (min-width: 768px) {
+  .carWheelImageRear {
+    bottom: 60px;
+    right: 370px;
+    width: 133px;
+    height: 133px;
+  }
 }
 
 .distanceMeterList {
@@ -211,34 +274,82 @@
   gap: 22px;
 }
 
+.modelName {
+  width: 80px;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .modelName {
+    width: 146px;
+    height: 23px;
+  }
+}
+
 .kiloMeters {
   position: relative;
   color: #008DFF;
 }
 
 .distance {
-  font-size: 46px;
+  font-size: 20px;
   font-family: montesrratRegular;
+}
+@media (min-width: 768px) {
+  .distance {
+    font-size: 46px;
+  }
 }
 
 .unit {
   position: absolute;
   top: 0;
-  right: -10px;
-  font-size: 20px;
+  right: 0;
   font-family: montesrratLight;
+  font-size: 10px;
+}
+@media (min-width: 768px) {
+  .unit {
+    right: -10px;
+    font-size: 20px;
+  }
 }
 
 .calculatorInnerContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 42px;
+  gap: 30px;
+}
+@media (min-width: 768px) {
+  .calculatorInnerContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .calculatorInnerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
+  }
+}
+@media (min-width: 1400px) {
+  .calculatorInnerContainer {
+    gap: 42px;
+  }
 }
 
 .divider {
   height: 128px;
   border-left: 1px solid #B9BED1;
+  display: none;
+}
+@media (min-width: 1200px) {
+  .divider {
+    display: block;
+  }
 }
 
 .formSection {
@@ -246,6 +357,16 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 23px;
+}
+@media (min-width: 768px) {
+  .formSection {
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+  .formSection {
+    align-items: flex-start;
+  }
 }
 .formSection .label {
   font-family: montesrratLight;

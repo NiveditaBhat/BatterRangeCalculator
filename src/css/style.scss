@@ -1,7 +1,10 @@
+
 @use './introduction';
 @use './batterRangeCalculator';
+@import './breakpoints';
+
     
-$fonts: 'Poppins', Helvertica, sans-serif;
+$fonts: montesrratRegular;
 $spacing: 2rem;
 
 @font-face {
@@ -19,7 +22,7 @@ $spacing: 2rem;
     src: url(../fonts/Montserrat-Bold.ttf);
  }
    
-body {
+html,body {
     font-family: $fonts;
     background-color: white;
     padding: 0;
@@ -36,43 +39,137 @@ body {
     justify-content: center;
     gap:60px;
     padding: 70px 0;
+
 }
 
 .logoWrapper{
     height: 65px;
     background-color: black;
-    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; 
+    padding:12px;
 }
+
+.logo{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navButton{
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+
+    @include respond-to(screen-medium) {
+        display: none;
+    }
+
+    &:active{
+        background-color: #7FC4FD;
+    }
+}
+
+.navContainerMobile{
+    display: flex;
+    position: relative;
+    z-index: 1;
+
+    @include respond-to(screen-medium) {
+        display: none;
+    }
+
+    nav{
+        position: absolute;
+        top:0;
+        left:0; 
+        background-color: white;
+        box-shadow: 0px 0px 10px #7FC4FD;
+        width: 100%;
+    }
+
+    .menuList{
+        list-style: none;
+        padding: 0;
+    
+        li{
+            padding:20px;
+        }
+    }
+}
+
+.hide{
+    display: none;
+}
+
 
 .navContainer{
     position: relative;
+    background-image: url("../images/hero-image.png");
+    background-size: cover;
+    width:100%;
+    height:300px;
+
+    @include respond-to(screen-small) {
+        height:400px;
+    }
+
+
+    @include respond-to(screen-medium) {
+        height:500px;
+    }
+
+    @include respond-to(screen-large) {
+        background-image: url("../images/hero-image@2x.png");
+        height:700px;
+    }
+
+    @include respond-to(screen-xl) {
+        height:800px;
+    }
+
+
+    .navItem{
+        padding:14px 0;
+        cursor: pointer;
+    }
+
+    .selected{
+        border-bottom: 1px solid white;
+    }
+
 
     nav{
         position: absolute;
         top: 0;
         width: 100%;
-        display: flex;
-        gap: 80px;
-        align-items: center;
-        justify-content: center;
-        padding: 33px;
         color:#FFFFFF;
         font-size: 14px;
         font-family: montesrratBold;
+ 
+    }
 
-        .navItem{
-            padding:14px 0;
-            cursor: pointer;
+    .menuList{
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        padding: 33px 0;
+        display: none;
+        list-style: none;
+
+        @include respond-to(screen-medium) {
+            display: flex;
+            gap: 30px;
         }
 
-        .selected{
-            border-bottom: 1px solid white;
+        @include respond-to(screen-large) {
+            gap: 50px;
         }
-
-      
+    
+        @include respond-to(screen-xl) {
+            gap: 80px;
+        }
     }
 }
 
@@ -84,16 +181,40 @@ small{
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     color:#040C36;
+    text-align: justify;
+    // width: 70%;
+
+    // @include respond-to(screen-medium) {
+
+    // }
 }
 
 footer{
-    width: 100%;
-    height:260px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:50px;
     background-color: black;
     color:#FFFFFF;
-    padding:60px 60px 0 60px;
-    display: flex;
-    gap:90px;
+    padding:20px 0;
+
+   
+    @include respond-to(screen-medium) {
+        display:grid;
+        grid-template-columns: auto auto;
+        padding:60px;
+      }
+  
+
+    @include respond-to(screen-xl) {
+        padding:60px 60px 0 60px;
+        display: flex;
+        flex-direction: row;
+        gap:90px;
+        height:260px;
+    }
+   
 }
 
 .footerItem{
@@ -148,7 +269,12 @@ footer{
 
     .subscribeContainer{
         display: flex;
+        flex-direction: column;
         gap: 20px;
+
+        @include respond-to(screen-medium) {
+          flex-direction: row;
+        }
     }
 
     .subscribeText{

@@ -1,3 +1,5 @@
+@import 'breakpoints';
+
 $base-chevron-button-color: #819baf0b;
 
 .introduction{
@@ -11,9 +13,12 @@ $base-chevron-button-color: #819baf0b;
 
     .title{
         font-family:montesrratLight;
-        font-size: 64px;
+        font-size: 34px;
         margin: 0;
-    
+
+        @include respond-to(screen-medium) {
+            font-size: 64px;
+        }
     }
     
     .description{

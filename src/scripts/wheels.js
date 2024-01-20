@@ -1,54 +1,35 @@
+const DEFAULT_SIZE = 19;
+
 class Wheels {
   constructor(element = null) {
     this.element = element;
+    this.#selectedWheel = DEFAULT_SIZE;
+
+    this.#addEventListeners();
   }
 
-  #wheel;
+  #selectedWheel;
 
   getSelectedWheel() {
-    return this.#wheel;
+    return this.#selectedWheel;
   }
 
-  addEventListeners() {
-    const updateSelection = (selectedElement) => {
-      const wheelSize = selectedElement.getAttribute("data-size");
-      this.#wheel = Number(wheelSize);
-    };
+  #setSelectedWheel(size) {
+    this.#selectedWheel = Number(size);
+  }
 
+  #addEventListeners() {
     const updateSelectedButton = (prevSelection, currentSelection) => {
       prevSelection.classList.remove("selected");
       currentSelection.classList.add("selected");
     };
 
-    const updateFrontWheel = (previous) => {
-      const currentSelection = document.querySelector(
-        `.carWheelImageFront[data-size='${this.getSelectedWheel()}']`,
-      );
-      currentSelection.classList.remove("hide");
-      const previousSelection = document.querySelector(
-        `.carWheelImageFront[data-size='${previous}']`,
-      );
-
-      previousSelection.classList.add("hide");
-    };
-
-    const updateRearWheel = (previous) => {
-      const currentSelection = document.querySelector(
-        `.carWheelImageRear[data-size='${this.getSelectedWheel()}']`,
-      );
-      currentSelection.classList.remove("hide");
-      const previousSelection = document.querySelector(
-        `.carWheelImageRear[data-size='${previous}']`,
-      );
-
-      previousSelection.classList.add("hide");
-    };
-
     window.onload = () => {
-      const defaultSelectedWheel = this.element.querySelector(
-        ".wheelButton.selected",
-      );
-      updateSelection(defaultSelectedWheel);
+      const defaultSelectedWheel =
+        this.element
+          .querySelector(".wheelButton.selected")
+          ?.getAttribute("data-size") ?? DEFAULT_SIZE;
+      this.#setSelectedWheel(defaultSelectedWheel);
     };
 
     this.element.addEventListener("click", (e) => {
@@ -59,11 +40,19 @@ class Wheels {
         ".wheelButton.selected",
       );
       const currentSelection = e.target.closest(".wheelButton");
+      const currentWheelSize = currentSelection?.getAttribute("data-size");
 
-      updateSelection(currentSelection);
-      updateFrontWheel(previousWheelSize);
-      updateRearWheel(previousWheelSize);
+      if (!prevSelection || !currentSelection) {
+        throw new Error("Wheel buttons not found");
+      }
+
+      this.#setSelectedWheel(currentWheelSize);
+
       updateSelectedButton(prevSelection, currentSelection);
+
+      document.dispatchEvent(new CustomEvent("wheelSelectionChangedEvent"), {
+        detail: { previousWheelSize },
+      });
 
       document.dispatchEvent(new CustomEvent("kiloMetersChangedEvent"));
     });

@@ -1,0 +1,25 @@
+
+$breakpoints: (
+    'screen-small': (min-width : 640px), 
+    'screen-small-landscape': (min-width : 640px) and (orientation: landscape), 
+    'screen-medium': (min-width :  768px), 
+    'screen-medium-landscape': (min-width :  768px) and (orientation: landscape),
+    'screen-large': (min-width :  1024px),
+    'screen-xl': (min-width : 1200px),
+    'screen-xxl': (min-width : 1400px),
+);
+
+@mixin respond-to($name) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $name) {
+      // Prints a media query based on the value
+      @media #{inspect(map-get($breakpoints, $name))} {
+        @content;
+      }
+    }
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoints}`. "
+          + "Please make sure it is defined in `$breakpoints` map.";
+    }
+  }

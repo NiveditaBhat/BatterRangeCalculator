@@ -7,29 +7,29 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: "src/images/[name][ext]",
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[path][name].[ext]",
-              outputPath: "/",
-            },
-          },
-        ],
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
       {
         test: /\.json$/,
         use: "json-loader",
         type: "javascript/auto",
+      },
+      {
+        test: /\.html/,
+        type: "asset/resource",
+        generator: {
+          filename: "static/[hash][ext][query]",
+        },
       },
     ],
   },
