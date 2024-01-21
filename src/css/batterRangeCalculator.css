@@ -345,22 +345,14 @@ input#speedCounter:focus, input#temperatureCounter:focus {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-}
-@supports (-ms-ime-align: auto) {
-  .calculatorInnerContainer > * {
-    margin: -15px;
-  }
+  -ms-gap: 30px;
 }
 @media (min-width: 768px) {
   .calculatorInnerContainer {
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 40px;
-  }
-  @supports (-ms-ime-align: auto) {
-    .calculatorInnerContainer > * {
-      margin: -20px;
-    }
+    -ms-gap: 40px;
   }
 }
 @media (min-width: 1200px) {
@@ -369,21 +361,13 @@ input#speedCounter:focus, input#temperatureCounter:focus {
     flex-direction: row;
     justify-content: space-between;
     gap: 25px;
-  }
-  @supports (-ms-ime-align: auto) {
-    .calculatorInnerContainer > * {
-      margin: -12.5px;
-    }
+    -ms-gap: 25px;
   }
 }
 @media (min-width: 1400px) {
   .calculatorInnerContainer {
     gap: 42px;
-  }
-  @supports (-ms-ime-align: auto) {
-    .calculatorInnerContainer > * {
-      margin: -21px;
-    }
+    -ms-gap: 42px;
   }
 }
 
@@ -403,11 +387,7 @@ input#speedCounter:focus, input#temperatureCounter:focus {
   flex-direction: column;
   align-items: flex-start;
   gap: 23px;
-}
-@supports (-ms-ime-align: auto) {
-  .formSection > * {
-    margin: -11.5px;
-  }
+  -ms-gap: 23px;
 }
 @media (min-width: 768px) {
   .formSection {
