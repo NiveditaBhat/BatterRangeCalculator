@@ -1,0 +1,14 @@
+@use "sass:math";
+
+@mixin flex-gap($gap) {
+    // Modern browsers that support 'gap'
+    gap: #{$gap}px;
+  
+  
+    // Fallback for Internet Explorer 11 using margin
+    @supports (-ms-ime-align: auto) {
+    & > * {
+      margin: #{math.div($gap, 2) * -1}px;
+    }
+  }
+  }

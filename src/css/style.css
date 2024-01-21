@@ -237,6 +237,11 @@ input#speedCounter:focus, input#temperatureCounter:focus {
   align-items: center;
   gap: 64px;
 }
+@supports (-ms-ime-align: auto) {
+  .batterRangeCalculator .innerContainer > * {
+    margin: -32px;
+  }
+}
 
 .carImageContainer {
   position: relative;
@@ -346,6 +351,11 @@ input#speedCounter:focus, input#temperatureCounter:focus {
   flex-direction: column;
   gap: 22px;
 }
+@supports (-ms-ime-align: auto) {
+  .distancePerModel > * {
+    margin: -11px;
+  }
+}
 
 .modelName {
   width: 80px;
@@ -393,11 +403,21 @@ input#speedCounter:focus, input#temperatureCounter:focus {
   align-items: center;
   gap: 30px;
 }
+@supports (-ms-ime-align: auto) {
+  .calculatorInnerContainer > * {
+    margin: -15px;
+  }
+}
 @media (min-width: 768px) {
   .calculatorInnerContainer {
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 40px;
+  }
+  @supports (-ms-ime-align: auto) {
+    .calculatorInnerContainer > * {
+      margin: -20px;
+    }
   }
 }
 @media (min-width: 1200px) {
@@ -407,10 +427,20 @@ input#speedCounter:focus, input#temperatureCounter:focus {
     justify-content: space-between;
     gap: 25px;
   }
+  @supports (-ms-ime-align: auto) {
+    .calculatorInnerContainer > * {
+      margin: -12.5px;
+    }
+  }
 }
 @media (min-width: 1400px) {
   .calculatorInnerContainer {
     gap: 42px;
+  }
+  @supports (-ms-ime-align: auto) {
+    .calculatorInnerContainer > * {
+      margin: -21px;
+    }
   }
 }
 
@@ -430,6 +460,11 @@ input#speedCounter:focus, input#temperatureCounter:focus {
   flex-direction: column;
   align-items: flex-start;
   gap: 23px;
+}
+@supports (-ms-ime-align: auto) {
+  .formSection > * {
+    margin: -11.5px;
+  }
 }
 @media (min-width: 768px) {
   .formSection {

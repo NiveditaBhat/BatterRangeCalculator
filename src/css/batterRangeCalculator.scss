@@ -3,6 +3,7 @@
 @use './wheels.scss';
 
 @import 'breakpoints';
+@import 'gap';
 
 
 .batterRangeCalculator{
@@ -27,9 +28,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 64px;
+    @include flex-gap(64); 
 }
-
 }
 
 .carImageContainer {
@@ -135,8 +135,7 @@
 .distancePerModel{
     display: flex;
     flex-direction: column;
-    gap:22px;
-
+    @include flex-gap(22); 
 }
 
 .modelName{
@@ -181,23 +180,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:30px;
+    @include flex-gap(30); 
 
     @include respond-to(screen-medium) {
         display:grid;
         grid-template-columns: 50% 50%;
-        gap:40px;
+        @include flex-gap(40); 
     }
 
     @include respond-to(screen-xl) {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        gap:25px;
+        @include flex-gap(25); 
     }
 
     @include respond-to(screen-xxl) {
-        gap:42px;
+        @include flex-gap(42); 
     }
 
 }
@@ -216,7 +215,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap:23px;
+    @include flex-gap(23); 
 
     @include respond-to(screen-medium) {
         align-items: center;
