@@ -236,11 +236,7 @@ input#speedCounter:focus, input#temperatureCounter:focus {
   flex-direction: column;
   align-items: center;
   gap: 64px;
-}
-@supports (-ms-ime-align: auto) {
-  .batterRangeCalculator .innerContainer > * {
-    margin: -32px;
-  }
+  -ms-gap: 64px;
 }
 
 .carImageContainer {
@@ -350,11 +346,7 @@ input#speedCounter:focus, input#temperatureCounter:focus {
   display: flex;
   flex-direction: column;
   gap: 22px;
-}
-@supports (-ms-ime-align: auto) {
-  .distancePerModel > * {
-    margin: -11px;
-  }
+  -ms-gap: 22px;
 }
 
 .modelName {
