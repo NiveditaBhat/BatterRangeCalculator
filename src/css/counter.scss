@@ -1,5 +1,5 @@
-.counter{
-    input[type=text] {
+
+    input[type=text].counterInput {
         position: relative; 
         height: 81px;
         width: 233px;
@@ -14,14 +14,6 @@
             outline: none;
         }
     }
-    
-    input[type=text]::-webkit-inner-spin-button,
-    input[type=text]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-    }
-}
-
-
 
 .counter,
 .counter * {

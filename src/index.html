@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tesla battery range calculator</title>
 </head>
@@ -12,7 +11,7 @@
 <body>
     <header class="logoWrapper">
         <img class="logo" src="src/images/logo.png" alt="tesla logo" width="100" height="13">
-        <img class="navButton" src="src/images/menu-icon-mobile.jpg" width="80" height="80" alt="menu icon mobile">
+        <img class="navButton" src="src/images/menu-icon-mobile.jpg" width="40" height="40" alt="menu icon mobile">
     </header>
     <div class="navContainerMobile hide">
         <nav class="menu">
@@ -80,12 +79,13 @@
                     <div class="formSection">
                         <label class="label" for="speedCounter">Speed</label>
                         <div class="counter" data-counter="speed">
-                            <button type="button" id="speedCounter" class="decrementButton">
+                            <button type="button" class="decrementButton">
                                 <object data="src/images/icon-thin-chevron-down.svg" type="image/svg+xml">
                                     <img src="src/images/icon-thin-chevron-down.svg" width="25" height="8">
                                 </object>
                             </button>
-                            <input type="text" name="speedCounter" value="100" readonly>
+                            <input type="text" id="speedCounter" name="speedCounter" class="counterInput" value="100"
+                                readonly>
                             <span class="staticText">KMH</span>
                             <button type="button" class="incrementButton">
                                 <object data="src/images/icon-thin-chevron-up.svg" type="image/svg+xml">
@@ -99,12 +99,13 @@
                     <div class="formSection">
                         <label class="label" for="temperatureCounter">Outside temperature</label>
                         <div class="counter temperatureCounter" data-counter="temperature">
-                            <button type="button" id="temperatureCounter" class="decrementButton">
+                            <button type="button" class="decrementButton">
                                 <object data="src/images/icon-thin-chevron-down.svg" type="image/svg+xml">
                                     <img src="src/images/icon-thin-chevron-down.svg" width="25" height="8">
                                 </object>
                             </button>
-                            <input type="text" name="temperatureCounter" value="40" readonly>
+                            <input type="text" id="temperatureCounter" name="temperatureCounter" class="counterInput"
+                                value="40" readonly>
                             <span class="staticText">o</span>
                             <button type="button" class="incrementButton">
                                 <object data="src/images/icon-thin-chevron-up.svg" type="image/svg+xml">
@@ -142,17 +143,17 @@
                         </div>
                     </div>
                 </section>
-                <small>The actual amount of range that you experience will vary based on your particular use conditions.
-                    Your
-                    vehicle range is also dependent on other conditions, such as vehicle configuration, battery age and
-                    condition,
-                    driving style and operating, environmental and climate conditions. See how some of these particular
-                    use
-                    conditions
-                    may affect your range in our simulation model.</small>
+
             </div>
         </section>
-
+        <small>The actual amount of range that you experience will vary based on your particular use conditions.
+            Your
+            vehicle range is also dependent on other conditions, such as vehicle configuration, battery age and
+            condition,
+            driving style and operating, environmental and climate conditions. See how some of these particular
+            use
+            conditions
+            may affect your range in our simulation model.</small>
     </section>
     <footer>
         <div class="footerItem">

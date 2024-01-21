@@ -2,6 +2,7 @@ import { TextEncoder, TextDecoder } from "util";
 
 Object.assign(global, { TextDecoder, TextEncoder });
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 const { JSDOM } = require("jsdom");
 
 const fs = require("fs");

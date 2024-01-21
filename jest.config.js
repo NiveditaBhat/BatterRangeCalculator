@@ -2,7 +2,7 @@ module.exports = {
   modulePaths: ["/shared/vendor/modules"],
   moduleFileExtensions: ["js", "jsx"],
   moduleDirectories: ["node_modules", "bower_components", "shared"],
-  testEnvironment: "jsdom", // or 'jsdom'
+  testEnvironment: "jsdom",
   setupFilesAfterEnv: ["./jest.setup.js"],
   moduleNameMapper: {
     "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
