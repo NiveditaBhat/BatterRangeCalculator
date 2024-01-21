@@ -1,6 +1,6 @@
 import "./css/style.css";
-import "./scripts/imageImporter.js";
-import BatteryRangeCalculator from "./scripts/batteryRangeCalculator.js";
+import "./scripts/imageImporter";
+import BatteryRangeCalculator from "./scripts/batteryRangeCalculator";
 
 const toggleMenu = () => {
   const navButton = document.querySelector(".navButton");

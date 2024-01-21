@@ -15,6 +15,8 @@ describe("BatteryRangeCalculator", () => {
   let distanceModel100D;
   let distanceModelP100D;
 
+  jest.useFakeTimers();
+
   beforeEach(async () => {
     speed = document.querySelector("[data-counter='speed']");
     incrementSpeedButton = speed.querySelector(".incrementButton");
@@ -43,6 +45,7 @@ describe("BatteryRangeCalculator", () => {
     expect(distanceModel100D.textContent).toBe("-");
 
     incrementSpeedButton.click();
+    jest.runAllTimers();
     expect(batterRangeCalculator.getDistanceModel100D()).toBe(550);
     expect(distanceModel100D.textContent).toBe("550");
 

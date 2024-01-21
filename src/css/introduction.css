@@ -36,6 +36,7 @@
   border-radius: 50%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .introduction .chevronDownButton:hover {
   cursor: pointer;

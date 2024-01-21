@@ -5,11 +5,13 @@ import Wheels from "./wheels";
 import Distance from "./distance";
 import dataModel100D from "../data/metric-100D.json";
 import dataModelP100D from "../data/metric-P100D.json";
+import debounce from "./debounce";
 
 const MIN_SPEED = 70;
 const MAX_SPEED = 140;
 const MIN_TEMPERATURE = -10;
 const MAX_TEMPERATURE = 40;
+const DELAY = 500;
 
 class BatteryRangeCalculator {
   #speed;
@@ -116,7 +118,8 @@ class BatteryRangeCalculator {
     });
 
     document.addEventListener("kiloMetersChangedEvent", () => {
-      updateDistanceForModels();
+      const debouncedDistance = debounce(updateDistanceForModels, DELAY);
+      debouncedDistance();
     });
 
     document.addEventListener("wheelSelectionChangedEvent", (e) => {
