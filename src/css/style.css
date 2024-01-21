@@ -47,7 +47,7 @@
   background-color: rgba(0, 0, 0, 0.0431372549);
 }
 
-input[type=text].counterInput {
+input[type=text]#speedCounter, input[type=text]#temperatureCounter {
   position: relative;
   height: 81px;
   width: 233px;
@@ -58,7 +58,7 @@ input[type=text].counterInput {
   padding: 0 22px;
   font-family: montesrratRegular;
 }
-input[type=text].counterInput:focus {
+input[type=text]#speedCounter:focus, input[type=text]#temperatureCounter:focus {
   outline: none;
 }
 

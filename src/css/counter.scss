@@ -1,5 +1,5 @@
 
-    input[type=text].counterInput {
+    input[type=text]#speedCounter, input[type=text]#temperatureCounter  {
         position: relative; 
         height: 81px;
         width: 233px;
@@ -15,6 +15,7 @@
         }
     }
 
+   
 .counter,
 .counter * {
     box-sizing: border-box;
