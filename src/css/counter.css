@@ -1,4 +1,4 @@
-input[type=text]#speedCounter, input[type=text]#temperatureCounter {
+input#speedCounter, input#temperatureCounter {
   position: relative;
   height: 81px;
   width: 233px;
@@ -9,7 +9,7 @@ input[type=text]#speedCounter, input[type=text]#temperatureCounter {
   padding: 0 22px;
   font-family: montesrratRegular;
 }
-input[type=text]#speedCounter:focus, input[type=text]#temperatureCounter:focus {
+input#speedCounter:focus, input#temperatureCounter:focus {
   outline: none;
 }
 

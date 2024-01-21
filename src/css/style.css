@@ -47,7 +47,7 @@
   background-color: rgba(0, 0, 0, 0.0431372549);
 }
 
-input[type=text]#speedCounter, input[type=text]#temperatureCounter {
+input#speedCounter, input#temperatureCounter {
   position: relative;
   height: 81px;
   width: 233px;
@@ -58,7 +58,7 @@ input[type=text]#speedCounter, input[type=text]#temperatureCounter {
   padding: 0 22px;
   font-family: montesrratRegular;
 }
-input[type=text]#speedCounter:focus, input[type=text]#temperatureCounter:focus {
+input#speedCounter:focus, input#temperatureCounter:focus {
   outline: none;
 }
 
@@ -652,7 +652,7 @@ footer {
 .footerItem .subscribeInfo {
   gap: 20px;
 }
-.footerItem input[type=text] {
+.footerItem input {
   position: relative;
   height: 40px;
   width: 210px;
@@ -661,15 +661,15 @@ footer {
   background-color: transparent;
   padding: 0 22px;
 }
-.footerItem input[type=text]:focus {
+.footerItem input:focus {
   outline: none;
 }
-.footerItem input[type=text]::-moz-placeholder {
+.footerItem input::-moz-placeholder {
   font-family: montesrratRegular;
   font-size: 14px;
   color: white;
 }
-.footerItem input[type=text]::placeholder {
+.footerItem input::placeholder {
   font-family: montesrratRegular;
   font-size: 14px;
   color: white;
