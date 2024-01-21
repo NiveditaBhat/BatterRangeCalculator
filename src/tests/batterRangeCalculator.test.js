@@ -15,8 +15,6 @@ describe("BatteryRangeCalculator", () => {
   let distanceModel100D;
   let distanceModelP100D;
 
-  jest.useFakeTimers();
-
   beforeEach(async () => {
     speed = document.querySelector("[data-counter='speed']");
     incrementSpeedButton = speed.querySelector(".incrementButton");
@@ -37,6 +35,11 @@ describe("BatteryRangeCalculator", () => {
     distanceModelP100D = document.querySelector(
       "[data-model='P100D'] [data-kms]",
     );
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
   });
 
   it("computes distance in kms for model 100D when speed, temperature, fan state and wheel size change", () => {
@@ -46,18 +49,24 @@ describe("BatteryRangeCalculator", () => {
 
     incrementSpeedButton.click();
     jest.runAllTimers();
+
     expect(batterRangeCalculator.getDistanceModel100D()).toBe(550);
     expect(distanceModel100D.textContent).toBe("550");
 
     fan.click();
+    jest.runAllTimers();
+
     expect(batterRangeCalculator.getDistanceModel100D()).toBe(500);
     expect(distanceModel100D.textContent).toBe("500");
 
     decrementTempButton.click();
+    jest.runAllTimers();
+
     expect(batterRangeCalculator.getDistanceModel100D()).toBe(508);
     expect(distanceModel100D.textContent).toBe("508");
 
     largeWheel.click();
+    jest.runAllTimers();
 
     expect(batterRangeCalculator.getDistanceModel100D()).toBe(496);
     expect(distanceModel100D.textContent).toBe("496");
@@ -69,18 +78,26 @@ describe("BatteryRangeCalculator", () => {
     expect(distanceModelP100D.textContent).toBe("-");
 
     decrementSpeedButton.click();
+    jest.runAllTimers();
+
     expect(batterRangeCalculator.getDistanceModelP100D()).toBe(659);
     expect(distanceModelP100D.textContent).toBe("659");
 
     fan.click();
+    jest.runAllTimers();
+
     expect(batterRangeCalculator.getDistanceModelP100D()).toBe(584);
     expect(distanceModelP100D.textContent).toBe("584");
 
     decrementTempButton.click();
+    jest.runAllTimers();
+
     expect(batterRangeCalculator.getDistanceModelP100D()).toBe(606);
     expect(distanceModelP100D.textContent).toBe("606");
 
     largeWheel.click();
+    jest.runAllTimers();
+
     expect(batterRangeCalculator.getDistanceModelP100D()).toBe(577);
     expect(distanceModelP100D.textContent).toBe("577");
   });

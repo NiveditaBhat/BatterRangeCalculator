@@ -1,5 +1,6 @@
 
 $breakpoints: (
+    'screen-xs': (min-width : 320px), 
     'screen-small': (min-width : 640px), 
     'screen-small-landscape': (min-width : 640px) and (orientation: landscape), 
     'screen-medium': (min-width :  768px), 

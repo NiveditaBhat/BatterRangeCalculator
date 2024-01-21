@@ -16,4 +16,5 @@ const toggleMenu = () => {
 
 toggleMenu();
 
+// eslint-disable-next-line no-unused-vars
 const batterRangeCalculator = new BatteryRangeCalculator();

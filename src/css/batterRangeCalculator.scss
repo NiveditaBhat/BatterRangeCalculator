@@ -36,14 +36,22 @@
     position: relative;
     background-image: url("../images/car-base.png");
     background-size: cover;
-    width: 700px;
-    height: 200px;
+    width: 500px;
+    height: 140px;
+
+    @include respond-to(screen-small) {
+        background-image: url("../images/car-base@2x.png");
+        width: 700px;
+        height: 200px;
+    }
 
     @include respond-to(screen-medium) {
         background-image: url("../images/car-base@2x.png");
         width: 1400px;
         height: 388px;
     }
+
+ 
 
     .hide{
         display: none;
@@ -58,14 +66,22 @@
 
 .carWheelImageFront{
     position: absolute;
-    width: 70px;
-    height: 70px;
-    bottom: 30px;
-    left: 178px;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    left: 125px;
     animation-name: rotate;
     animation-duration: 1ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+
+
+    @include respond-to(screen-small) {
+        width: 70px;
+        height: 70px;
+        bottom: 30px;
+        left: 178px;
+    }
 
     @include respond-to(screen-medium) {
         bottom: 60px;
@@ -78,14 +94,21 @@
 
 .carWheelImageRear{
     position: absolute;
-    bottom: 30px;
-    right: 168px;
-    width: 70px;
-    height: 70px;
+    bottom: 20px;
+    right: 128px;
+    width: 50px;
+    height: 50px;
     animation-name: rotate;
     animation-duration: 1ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+
+    @include respond-to(screen-small) {
+        bottom: 30px;
+        right: 168px;
+        width: 70px;
+        height: 70px;
+    }
 
     @include respond-to(screen-medium) {
         bottom: 60px;
@@ -96,17 +119,16 @@
 }
 
 .distanceMeterList{
-    width: 35%;
+    width: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
    justify-content: space-between;
 
-//    @include respond-to(screen-medium) {
-//         width: 35%;
-//     }
-
+   @include respond-to(screen-large) {
+        width: 35%;
+    }
 }
 
 
